@@ -22,4 +22,6 @@
 
 @interface KJBLEMainViewController : UITableViewController
 
+- (IBAction)disconnectActionForSegue:(UIStoryboardSegue *)segue;
+
 @end

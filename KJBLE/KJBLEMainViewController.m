@@ -8,8 +8,10 @@
 
 #import "KJBLEMainViewController.h"
 #import "KJBLEManager.h"
+#import "ProgressHUD.h"
 
 #import "KJBLEDeviceInfoViewController.h"
+#import "KJBLEDeviceTestViewController.h"
 
 #pragma mark - KJBLEMainListCell
 @implementation KJBLEMainListCell
@@ -54,6 +56,7 @@
 #pragma mark - KJBLEMainViewController
 @interface KJBLEMainViewController ()
 @property (nonatomic, strong) KJBLEManager *manager;
+@property (nonatomic, strong) KJBLEDevice *selectedDevice;
 @end
 
 @implementation KJBLEMainViewController
@@ -67,7 +70,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
-	
+	[ProgressHUD dismiss];
 	self.manager = [[KJBLEManager alloc] init];
 //	[_manager testScans];
 }
@@ -172,16 +175,42 @@
 	if([[_manager nearByDevicesList] count] > indexPath.row) {
 		KJBLEDevice *device = [[_manager nearByDevicesList] objectAtIndex:indexPath.row];
 		
-		if(device.state == DeviceStateDisconnected) {
-			[_manager connectDevice:device];
+		if(_selectedDevice) {
+			if(_selectedDevice.state == DeviceStateConnected) {
+				[ProgressHUD show:@"disconnect device.."];
+				
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[_manager disconnectDevice:_selectedDevice];
+				});
+			}
+			
+			if(device != _selectedDevice) {
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[_manager connectDevice:device];
+				});
+			}
 		}
-		else if(device.state == DeviceStateConnected) {
-			[_manager disconnectDevice:device];
+		else {
+			[ProgressHUD show:@"connecting device"];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[_manager connectDevice:device];
+			});
 		}
 //		[self performSegueWithIdentifier:@"connectToDevice" sender:device];
 	}
 }
 
+#pragma mark - IBAction
+- (IBAction)disconnectActionForSegue:(UIStoryboardSegue *)segue {
+	// 接続を切る。
+	if(!_selectedDevice)	return;
+	
+	[ProgressHUD show:@"disconnect device.."];
+	
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[_manager disconnectDevice:_selectedDevice];
+	});
+}
 
 /**/
 #pragma mark - Navigation
@@ -192,7 +221,11 @@
     // Pass the selected object to the new view controller.
 	if([segue.identifier isEqualToString:@"connectToDevice"]) {
 		KJBLEDeviceInfoViewController *devInfo = segue.destinationViewController;
-		devInfo.selectedDevice = (KJBLEDevice *)sender;
+		devInfo.selectedDevice = _selectedDevice;
+	}
+	else if([segue.identifier isEqualToString:@"connectToTest"]) {
+		KJBLEDeviceTestViewController *devTest = segue.destinationViewController;
+		devTest.device = _selectedDevice;
 	}
 }
 /**/
@@ -208,10 +241,23 @@
 
 - (void)connectedDevice:(NSNotification *)notify {
 	NSLog(@"%s", __FUNCTION__);
+	[ProgressHUD dismiss];
+	KJBLEDevice *tmpDevice = notify.userInfo[kBLEDevice];
+	if(tmpDevice) {
+		self.selectedDevice = tmpDevice;
+		
+		[self performSegueWithIdentifier:@"connectToTest" sender:nil];
+	}
 }
 
 - (void)disconnectedDevice:(NSNotification *)notify {
 	NSLog(@"%s", __FUNCTION__);
+	
+	self.selectedDevice = nil;
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[ProgressHUD dismiss];
+	});
+	
 }
 
 - (void)updateReady:(NSNotification *)notify {

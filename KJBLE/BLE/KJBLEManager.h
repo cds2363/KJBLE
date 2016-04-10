@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString* const kBLEDevice;
+
 extern NSString* const kNotifyBLEManagerReady;
 extern NSString* const kNotifyBLEDeviceFound;
 extern NSString* const kNotifyBLEDeviceConnected;

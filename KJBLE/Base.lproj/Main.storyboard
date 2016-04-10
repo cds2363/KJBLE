@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rmH-3V-1rr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rmH-3V-1rr">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--BLE Device List-->
@@ -18,7 +18,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="1000" tableViewCell="uzw-GN-8Aw" id="EUT-V9-ZXj">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="7v4-Od-4VU" userLabel="RSSI">
@@ -84,6 +84,7 @@
                     <navigationItem key="navigationItem" title="BLE Device List" id="J6O-Qr-6TZ"/>
                     <connections>
                         <segue destination="Smj-xT-taN" kind="show" identifier="connectToDevice" id="t1l-6Q-fDw"/>
+                        <segue destination="P8a-Es-C5S" kind="show" identifier="connectToTest" id="vHA-pY-fkJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7EH-qG-E1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -103,7 +104,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="No1-mF-g0t" id="EZf-pS-Yhi">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -116,7 +117,79 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVd-cw-GPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768" y="1318"/>
+            <point key="canvasLocation" x="1754" y="1107"/>
+        </scene>
+        <!--デバイス名-->
+        <scene sceneID="cPk-0l-XBc">
+            <objects>
+                <viewController id="P8a-Es-C5S" customClass="KJBLEDeviceTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a58-TO-BSM"/>
+                        <viewControllerLayoutGuide type="bottom" id="EiG-6g-LQu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yqW-rc-6GO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-Bd-2J2">
+                                <rect key="frame" x="264" y="94" width="72" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bt8-32-I9U"/>
+                                    <constraint firstAttribute="width" constant="72" id="g7P-1g-IF0"/>
+                                </constraints>
+                                <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="PDC-df-9Pn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-tB-gAL">
+                                <rect key="frame" x="356" y="94" width="72" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Yellow">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="Qca-yQ-z48"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-Iv-P5S">
+                                <rect key="frame" x="172" y="94" width="72" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="dOl-VX-PAw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="centerX" secondItem="yqW-rc-6GO" secondAttribute="centerX" id="1DA-Ch-lYY"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="top" secondItem="O3f-Iv-P5S" secondAttribute="top" id="1fH-mb-MNz"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="width" secondItem="O3f-Iv-P5S" secondAttribute="width" id="6Ns-9K-IoH"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="height" secondItem="O3f-Iv-P5S" secondAttribute="height" id="7Em-Xh-A5w"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="leading" secondItem="zOh-Bd-2J2" secondAttribute="trailing" constant="20" id="AKE-6l-DSc"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="O3f-Iv-P5S" secondAttribute="top" id="Fq8-j7-s77"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="leading" secondItem="O3f-Iv-P5S" secondAttribute="trailing" constant="20" id="To7-GZ-RD6"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="height" secondItem="O3f-Iv-P5S" secondAttribute="height" id="alN-mg-zsK"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O3f-Iv-P5S" secondAttribute="trailing" constant="20" id="f8u-VX-aZB"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="width" secondItem="O3f-Iv-P5S" secondAttribute="width" id="fB4-qg-oPj"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zOh-Bd-2J2" secondAttribute="trailing" constant="20" id="gj5-io-8TR"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="a58-TO-BSM" secondAttribute="bottom" constant="30" id="z4i-dz-InZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="デバイス名" id="xPY-df-JGF"/>
+                    <connections>
+                        <outlet property="btnGreen" destination="zOh-Bd-2J2" id="uh8-Pi-e8t"/>
+                        <outlet property="btnRed" destination="O3f-Iv-P5S" id="Tma-KB-nPO"/>
+                        <outlet property="btnYellow" destination="wyT-tB-gAL" id="dsx-OJ-j2X"/>
+                        <segue destination="FSb-FA-lVs" kind="unwind" unwindAction="disconnectActionForSegue:" id="vjf-q9-Oth"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ds8-Px-Lli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FSb-FA-lVs" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="1788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4qI-OF-zJw">

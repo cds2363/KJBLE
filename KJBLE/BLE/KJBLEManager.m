@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSMutableArray *devices;
 @end
 
+NSString* const kBLEDevice = @"BLE_DEVICE";
+
 NSString* const kNotifyBLEManagerReady = @"BLE_MANAGER_READY";
 NSString* const kNotifyBLEDeviceFound = @"BLE_DEVICE_FOUND";
 NSString* const kNotifyBLEDeviceConnected = @"BLE_DEVICE_CONNECTED";
@@ -137,14 +139,15 @@ NSString* const kNotifyBLEDeviceDisconnected = @"BLE_DEVICE_DISCONNECTED";
 	NSLog(@"%@", peripheral);
 	
 	[_devices enumerateObjectsUsingBlock:^(KJBLEDevice *obj, NSUInteger idx, BOOL *stop) {
+		// 検出されたデバイスの一覧で、接続されたデバイスのペリペラルのみを限定する。
 		if([obj.peripheral.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString]) {
 			obj.peripheral.delegate = obj;
 			obj.state = DeviceStateConnected;
 			
-			if(obj.peripheral.services == nil) {
-				[obj.peripheral discoverServices:nil];
-			}
-			[[NSNotificationCenter defaultCenter] postNotificationName:kNotifyBLEDeviceConnected object:nil];
+//			if(obj.peripheral.services == nil) {
+//				[obj.peripheral discoverServices:nil];
+//			}
+			[[NSNotificationCenter defaultCenter] postNotificationName:kNotifyBLEDeviceConnected object:nil userInfo:@{kBLEDevice:obj}];
 			*stop = YES;
 		}
 	}];

@@ -17,6 +17,12 @@
 		4268F3E71CAA79CF0018844D /* KJBLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3E61CAA79CF0018844D /* KJBLEDevice.m */; };
 		427D2ED01CAD3B81007848DF /* KJBLEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */; };
 		42AD93431CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */; };
+		8C371DAB1CBAAFE400E3A0CF /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C371DA81CBAAFE400E3A0CF /* ProgressHUD.bundle */; };
+		8C371DAC1CBAAFE400E3A0CF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C371DAA1CBAAFE400E3A0CF /* ProgressHUD.m */; };
+		8C371DAE1CBAB05800E3A0CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C371DAD1CBAB05800E3A0CF /* CoreGraphics.framework */; };
+		8C371DB11CBAB0AF00E3A0CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C371DB01CBAB0AF00E3A0CF /* UIKit.framework */; };
+		8C371DB31CBAB0C100E3A0CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C371DB21CBAB0C100E3A0CF /* Foundation.framework */; };
+		8C371DB81CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C371DB71CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,15 @@
 		427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJBLEMainViewController.m; sourceTree = "<group>"; };
 		42AD93411CB51C6D0086A668 /* KJBLEDeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJBLEDeviceInfoViewController.h; sourceTree = "<group>"; };
 		42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJBLEDeviceInfoViewController.m; sourceTree = "<group>"; };
+		8C371DA81CBAAFE400E3A0CF /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		8C371DA91CBAAFE400E3A0CF /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		8C371DAA1CBAAFE400E3A0CF /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		8C371DAD1CBAB05800E3A0CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8C371DB01CBAB0AF00E3A0CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8C371DB21CBAB0C100E3A0CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C371DB41CBAB15A00E3A0CF /* KJBLE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KJBLE-Prefix.pch"; sourceTree = "<group>"; };
+		8C371DB61CBAB86000E3A0CF /* KJBLEDeviceTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJBLEDeviceTestViewController.h; sourceTree = "<group>"; };
+		8C371DB71CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJBLEDeviceTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C371DB31CBAB0C100E3A0CF /* Foundation.framework in Frameworks */,
+				8C371DB11CBAB0AF00E3A0CF /* UIKit.framework in Frameworks */,
+				8C371DAE1CBAB05800E3A0CF /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +92,7 @@
 			children = (
 				4268F3BA1CAA77160018844D /* KJBLE */,
 				4268F3D41CAA77160018844D /* KJBLETests */,
+				8C371DAF1CBAB06C00E3A0CF /* Frameworks */,
 				4268F3B91CAA77160018844D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,12 +109,14 @@
 		4268F3BA1CAA77160018844D /* KJBLE */ = {
 			isa = PBXGroup;
 			children = (
+				8C371DA71CBAAFD500E3A0CF /* ProgressHUD */,
 				4268F3BF1CAA77160018844D /* AppDelegate.h */,
 				4268F3C01CAA77160018844D /* AppDelegate.m */,
 				427D2ECE1CAD3B81007848DF /* KJBLEMainViewController.h */,
 				427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */,
 				42AD93411CB51C6D0086A668 /* KJBLEDeviceInfoViewController.h */,
 				42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */,
+				8C371DB51CBAB80400E3A0CF /* Sub */,
 				4268F3E11CAA77360018844D /* BLE */,
 				4268F3C51CAA77160018844D /* Main.storyboard */,
 				4268F3C81CAA77160018844D /* Images.xcassets */,
@@ -110,6 +131,7 @@
 			children = (
 				4268F3BC1CAA77160018844D /* Info.plist */,
 				4268F3BD1CAA77160018844D /* main.m */,
+				8C371DB41CBAB15A00E3A0CF /* KJBLE-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +162,35 @@
 				4268F3E61CAA79CF0018844D /* KJBLEDevice.m */,
 			);
 			name = BLE;
+			sourceTree = "<group>";
+		};
+		8C371DA71CBAAFD500E3A0CF /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DA81CBAAFE400E3A0CF /* ProgressHUD.bundle */,
+				8C371DA91CBAAFE400E3A0CF /* ProgressHUD.h */,
+				8C371DAA1CBAAFE400E3A0CF /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		8C371DAF1CBAB06C00E3A0CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DB21CBAB0C100E3A0CF /* Foundation.framework */,
+				8C371DB01CBAB0AF00E3A0CF /* UIKit.framework */,
+				8C371DAD1CBAB05800E3A0CF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C371DB51CBAB80400E3A0CF /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DB61CBAB86000E3A0CF /* KJBLEDeviceTestViewController.h */,
+				8C371DB71CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m */,
+			);
+			path = Sub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C371DAB1CBAAFE400E3A0CF /* ProgressHUD.bundle in Resources */,
 				4268F3C71CAA77160018844D /* Main.storyboard in Resources */,
 				4268F3CC1CAA77160018844D /* LaunchScreen.xib in Resources */,
 				4268F3C91CAA77160018844D /* Images.xcassets in Resources */,
@@ -243,8 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				427D2ED01CAD3B81007848DF /* KJBLEMainViewController.m in Sources */,
+				8C371DB81CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m in Sources */,
 				4268F3E41CAA777D0018844D /* KJBLEManager.m in Sources */,
 				4268F3C11CAA77160018844D /* AppDelegate.m in Sources */,
+				8C371DAC1CBAAFE400E3A0CF /* ProgressHUD.m in Sources */,
 				4268F3E71CAA79CF0018844D /* KJBLEDevice.m in Sources */,
 				4268F3BE1CAA77160018844D /* main.m in Sources */,
 				42AD93431CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m in Sources */,
@@ -371,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "KJBLE/KJBLE-Prefix.pch";
 				INFOPLIST_FILE = KJBLE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -384,6 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "KJBLE/KJBLE-Prefix.pch";
 				INFOPLIST_FILE = KJBLE/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
