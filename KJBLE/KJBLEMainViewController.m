@@ -42,7 +42,7 @@
 			lbServiceName.text = @"No Service";
 		}
 		else {
-			lbServiceName.text = [NSString stringWithFormat:@"%d Service%@", [arrServices count], ([arrServices count] > 1 ? @"s" : @"")];
+			lbServiceName.text = [NSString stringWithFormat:@"%lu Service%@", (unsigned long)[arrServices count], ([arrServices count] > 1 ? @"s" : @"")];
 		}
 		
 		if(device.peripheral.identifier.UUIDString) {

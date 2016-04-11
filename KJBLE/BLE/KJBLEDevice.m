@@ -8,6 +8,8 @@
 
 #import "KJBLEDevice.h"
 
+NSString* const kBLECharacteristicValue = @"KEY_BLE_CHARACTERISTIC_VALUE";
+
 NSString* const kNotifyBLEPeripheralUpdateValueForCharacteristic = @"BLE_PERIPHERAL_UPDATE_VALUE_CHARACTERISTIC";
 NSString* const kNotifyBLEReady = @"BLE_READY";
 
@@ -97,7 +99,7 @@ NSString* const kNotifyBLEReady = @"BLE_READY";
 //		self.peripheral = peripheral;
 		
 		[_peripheral.services enumerateObjectsUsingBlock:^(CBService *service, NSUInteger idx, BOOL *stop) {
-			NSLog(@"[%d]%@", idx, service);
+			NSLog(@"[%lu]%@", (unsigned long)idx, service);
 			// サービスの特性の検出
 			[_peripheral discoverCharacteristics:nil forService:service];
 		}];
@@ -128,7 +130,7 @@ NSString* const kNotifyBLEReady = @"BLE_READY";
 	}
 	else {
 		[service.characteristics enumerateObjectsUsingBlock:^(CBCharacteristic *character, NSUInteger idx, BOOL *stop) {
-			NSLog(@"[%d] - %@", idx, character);
+			NSLog(@"[%lu] - %@", (unsigned long)idx, character);
 			[peripheral discoverDescriptorsForCharacteristic:character];
 		}];
 	}
@@ -144,7 +146,7 @@ NSString* const kNotifyBLEReady = @"BLE_READY";
 	}
 	else {
 		self.talkString = [[NSString alloc] initWithData:[characteristic value] encoding:NSUTF8StringEncoding];
-		[[NSNotificationCenter defaultCenter] postNotificationName:kNotifyBLEPeripheralUpdateValueForCharacteristic object:nil];
+		[[NSNotificationCenter defaultCenter] postNotificationName:kNotifyBLEPeripheralUpdateValueForCharacteristic object:nil userInfo:@{kBLECharacteristicValue:characteristic}];
 	}
 }
 

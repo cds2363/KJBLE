@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
+extern NSString* const kBLECharacteristicValue;
+
 extern NSString* const kNotifyBLEPeripheralUpdateValueForCharacteristic;
 extern NSString* const kNotifyBLEReady;
 

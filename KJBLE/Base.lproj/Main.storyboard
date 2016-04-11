@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rmH-3V-1rr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rmH-3V-1rr">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--BLE Device List-->
@@ -131,20 +133,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-Bd-2J2">
-                                <rect key="frame" x="264" y="94" width="72" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Bt8-32-I9U"/>
-                                    <constraint firstAttribute="width" constant="72" id="g7P-1g-IF0"/>
-                                </constraints>
-                                <state key="normal" title="Green"/>
-                                <connections>
-                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="PDC-df-9Pn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-tB-gAL">
-                                <rect key="frame" x="356" y="94" width="72" height="30"/>
+                                <rect key="frame" x="395" y="94" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Yellow">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -154,32 +144,64 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-Iv-P5S">
-                                <rect key="frame" x="172" y="94" width="72" height="30"/>
+                                <rect key="frame" x="55" y="94" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Red"/>
                                 <connections>
                                     <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="dOl-VX-PAw"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3U-2W-2AV">
+                                <rect key="frame" x="0.0" y="154" width="600" height="446"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BaldHead" translatesAutoresizingMaskIntoConstraints="NO" id="nkk-gZ-mSI">
+                                        <rect key="frame" x="103" y="23" width="394" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="nkk-gZ-mSI" secondAttribute="height" multiplier="197:200" id="oht-nR-lnb"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nkk-gZ-mSI" secondAttribute="width" multiplier="600/394" id="900-p8-B2V"/>
+                                    <constraint firstAttribute="centerY" secondItem="nkk-gZ-mSI" secondAttribute="centerY" id="LgR-6P-mBS"/>
+                                    <constraint firstAttribute="centerX" secondItem="nkk-gZ-mSI" secondAttribute="centerX" id="Vwe-Vj-Rk9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-Bd-2J2">
+                                <rect key="frame" x="225" y="94" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JVA-Cx-GIR"/>
+                                </constraints>
+                                <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="PDC-df-9Pn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="centerX" secondItem="yqW-rc-6GO" secondAttribute="centerX" id="1DA-Ch-lYY"/>
-                            <constraint firstItem="wyT-tB-gAL" firstAttribute="top" secondItem="O3f-Iv-P5S" secondAttribute="top" id="1fH-mb-MNz"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="width" secondItem="O3f-Iv-P5S" secondAttribute="width" id="6Ns-9K-IoH"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="height" secondItem="O3f-Iv-P5S" secondAttribute="height" id="7Em-Xh-A5w"/>
-                            <constraint firstItem="wyT-tB-gAL" firstAttribute="leading" secondItem="zOh-Bd-2J2" secondAttribute="trailing" constant="20" id="AKE-6l-DSc"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="O3f-Iv-P5S" secondAttribute="top" id="Fq8-j7-s77"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="leading" secondItem="O3f-Iv-P5S" secondAttribute="trailing" constant="20" id="To7-GZ-RD6"/>
-                            <constraint firstItem="wyT-tB-gAL" firstAttribute="height" secondItem="O3f-Iv-P5S" secondAttribute="height" id="alN-mg-zsK"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O3f-Iv-P5S" secondAttribute="trailing" constant="20" id="f8u-VX-aZB"/>
-                            <constraint firstItem="wyT-tB-gAL" firstAttribute="width" secondItem="O3f-Iv-P5S" secondAttribute="width" id="fB4-qg-oPj"/>
-                            <constraint firstItem="wyT-tB-gAL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zOh-Bd-2J2" secondAttribute="trailing" constant="20" id="gj5-io-8TR"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="a58-TO-BSM" secondAttribute="bottom" constant="30" id="z4i-dz-InZ"/>
+                            <constraint firstAttribute="centerX" secondItem="zOh-Bd-2J2" secondAttribute="centerX" id="8em-3P-STv"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="width" secondItem="zOh-Bd-2J2" secondAttribute="width" id="K8n-Eg-Ird"/>
+                            <constraint firstItem="O3f-Iv-P5S" firstAttribute="width" secondItem="zOh-Bd-2J2" secondAttribute="width" id="Ki4-aa-9OB"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="leading" secondItem="zOh-Bd-2J2" secondAttribute="trailing" priority="750" constant="20" id="Lbf-JH-qdn"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="height" secondItem="zOh-Bd-2J2" secondAttribute="height" id="Rrc-Yh-Nk6"/>
+                            <constraint firstAttribute="trailing" secondItem="S3U-2W-2AV" secondAttribute="trailing" id="dq1-sF-wdz"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="top" secondItem="zOh-Bd-2J2" secondAttribute="top" id="fdL-MO-nf2"/>
+                            <constraint firstAttribute="width" secondItem="zOh-Bd-2J2" secondAttribute="width" multiplier="320/80" id="gNE-dk-jRX"/>
+                            <constraint firstItem="S3U-2W-2AV" firstAttribute="top" secondItem="zOh-Bd-2J2" secondAttribute="bottom" constant="30" id="jNl-rz-yXx"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="height" secondItem="O3f-Iv-P5S" secondAttribute="height" id="ltd-Iv-XaW"/>
+                            <constraint firstItem="S3U-2W-2AV" firstAttribute="leading" secondItem="yqW-rc-6GO" secondAttribute="leading" id="nT8-0s-WDQ"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="leading" secondItem="O3f-Iv-P5S" secondAttribute="trailing" priority="750" constant="20" id="qXI-s4-iC1"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="a58-TO-BSM" secondAttribute="bottom" constant="30" id="qjg-Mw-spm"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="top" secondItem="O3f-Iv-P5S" secondAttribute="top" id="wrq-nL-lRs"/>
+                            <constraint firstItem="EiG-6g-LQu" firstAttribute="top" secondItem="S3U-2W-2AV" secondAttribute="bottom" id="zXj-jD-wel"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="デバイス名" id="xPY-df-JGF"/>
                     <connections>
+                        <outlet property="baldView" destination="S3U-2W-2AV" id="J6c-EH-jXf"/>
                         <outlet property="btnGreen" destination="zOh-Bd-2J2" id="uh8-Pi-e8t"/>
                         <outlet property="btnRed" destination="O3f-Iv-P5S" id="Tma-KB-nPO"/>
                         <outlet property="btnYellow" destination="wyT-tB-gAL" id="dsx-OJ-j2X"/>
@@ -210,4 +232,7 @@
             <point key="canvasLocation" x="316" y="1319"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BaldHead" width="246" height="250"/>
+    </resources>
 </document>

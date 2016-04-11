@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		424150A01CBBA2B800463E48 /* DefinitionIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefinitionIF.h; sourceTree = "<group>"; };
 		4268F3B81CAA77160018844D /* KJBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4268F3BC1CAA77160018844D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4268F3BD1CAA77160018844D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424150A11CBBA2CF00463E48 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				424150A01CBBA2B800463E48 /* DefinitionIF.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		4268F3AF1CAA77160018844D = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +125,7 @@
 				427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */,
 				42AD93411CB51C6D0086A668 /* KJBLEDeviceInfoViewController.h */,
 				42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */,
+				424150A11CBBA2CF00463E48 /* Common */,
 				8C371DB51CBAB80400E3A0CF /* Sub */,
 				4268F3E11CAA77360018844D /* BLE */,
 				4268F3C51CAA77160018844D /* Main.storyboard */,

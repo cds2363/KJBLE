@@ -13,6 +13,12 @@
 	IBOutlet UIButton *btnRed;
 	IBOutlet UIButton *btnGreen;
 	IBOutlet UIButton *btnYellow;
+	
+	IBOutlet UISwitch *swRed;
+	IBOutlet UISwitch *swGreen;
+	IBOutlet UISwitch *swYellow;
+	
+	IBOutlet UIView *baldView;
 }
 
 @property (nonatomic, strong) KJBLEDevice *device;

@@ -7,6 +7,7 @@
 //
 
 #import "KJBLEDeviceTestViewController.h"
+#import "DefinitionIF.h"
 
 @interface KJBLEDeviceTestViewController ()
 
@@ -24,6 +25,14 @@
 	if(_device.peripheral.services == nil) {
 		[_device.peripheral discoverServices:nil];
 	}
+	
+	
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCharacteristic:) name:kNotifyBLEPeripheralUpdateValueForCharacteristic object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,5 +73,31 @@
 	}
 }
 
+
+#pragma mark - NSNotify
+- (void)updateCharacteristic:(NSNotification *)notify {
+	CBCharacteristic *character = notify.userInfo[kBLECharacteristicValue];
+	
+	if([character value]) {
+//		NSString *strVal = [[NSString alloc] initWithData:[character value] encoding:NSUTF8StringEncoding];
+//		baldView.backgroundColor = [UIColor colorWithWhite:(outVal/255.f) alpha:1.f];
+		
+		NSData *data = [character value];
+		const uint8_t *reportData = [data bytes];
+		uint16_t tValue = 0;
+		
+		if((reportData[0] & 0x01) == 0) {
+			tValue = reportData[1];
+		}
+		else {
+			tValue = CFSwapInt16LittleToHost(*(uint16_t *)(&reportData[1]));
+		}
+		
+		int colVal = [[NSString stringWithFormat:@"%i", tValue] intValue];
+		
+		NSLog(@">>>>>>> %d", colVal);
+		baldView.backgroundColor = [UIColor colorWithWhite:(colVal/255.f) alpha:1.f];
+	}
+}
 
 @end

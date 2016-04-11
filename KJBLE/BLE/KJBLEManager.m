@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *devices;
 @end
 
-NSString* const kBLEDevice = @"BLE_DEVICE";
+NSString* const kBLEDevice = @"KEY_BLE_DEVICE";
 
 NSString* const kNotifyBLEManagerReady = @"BLE_MANAGER_READY";
 NSString* const kNotifyBLEDeviceFound = @"BLE_DEVICE_FOUND";
