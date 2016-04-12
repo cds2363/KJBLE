@@ -212,6 +212,12 @@
 	});
 }
 
+- (IBAction)onRefresh:(id)sender {
+//	[ProgressHUD show:@"Find Nearby BLE Devices..."];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	[_manager refresh];
+}
+
 /**/
 #pragma mark - Navigation
 
@@ -236,6 +242,9 @@
 }
 
 - (void)foundDevice:(NSNotification *)notify {
+//	[ProgressHUD dismiss];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
 	[self.tableView reloadData];
 }
 

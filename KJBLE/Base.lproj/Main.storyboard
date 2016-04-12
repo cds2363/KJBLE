@@ -83,7 +83,13 @@
                             <outlet property="delegate" destination="5Uq-Y5-DHN" id="tAi-Cp-Nbp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="BLE Device List" id="J6O-Qr-6TZ"/>
+                    <navigationItem key="navigationItem" title="BLE Device List" id="J6O-Qr-6TZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="v6A-aK-2gQ">
+                            <connections>
+                                <action selector="onRefresh:" destination="5Uq-Y5-DHN" id="lgp-t9-dMO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Smj-xT-taN" kind="show" identifier="connectToDevice" id="t1l-6Q-fDw"/>
                         <segue destination="P8a-Es-C5S" kind="show" identifier="connectToTest" id="vHA-pY-fkJ"/>
@@ -133,8 +139,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-Iv-P5S">
+                                <rect key="frame" x="55" y="84" width="150" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Red"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="dOl-VX-PAw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-Bd-2J2">
+                                <rect key="frame" x="225" y="84" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JVA-Cx-GIR"/>
+                                </constraints>
+                                <state key="normal" title="Green"/>
+                                <connections>
+                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="PDC-df-9Pn"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-tB-gAL">
-                                <rect key="frame" x="395" y="94" width="150" height="30"/>
+                                <rect key="frame" x="395" y="84" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Yellow">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -143,14 +168,24 @@
                                     <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="Qca-yQ-z48"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-Iv-P5S">
-                                <rect key="frame" x="55" y="94" width="150" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Red"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-NA-RFk" userLabel="Switch - Red">
+                                <rect key="frame" x="106" y="119" width="51" height="31"/>
                                 <connections>
-                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="dOl-VX-PAw"/>
+                                    <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="78Q-g1-8n7"/>
                                 </connections>
-                            </button>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWj-bu-TqV" userLabel="Switch - Green">
+                                <rect key="frame" x="276" y="119" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="DOp-qd-dcY"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-xa-Pvj" userLabel="Switch - Yellow">
+                                <rect key="frame" x="446" y="119" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="8Li-Pl-IWY"/>
+                                </connections>
+                            </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3U-2W-2AV">
                                 <rect key="frame" x="0.0" y="154" width="600" height="446"/>
                                 <subviews>
@@ -168,17 +203,6 @@
                                     <constraint firstAttribute="centerX" secondItem="nkk-gZ-mSI" secondAttribute="centerX" id="Vwe-Vj-Rk9"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-Bd-2J2">
-                                <rect key="frame" x="225" y="94" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JVA-Cx-GIR"/>
-                                </constraints>
-                                <state key="normal" title="Green"/>
-                                <connections>
-                                    <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="PDC-df-9Pn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -187,14 +211,20 @@
                             <constraint firstItem="O3f-Iv-P5S" firstAttribute="width" secondItem="zOh-Bd-2J2" secondAttribute="width" id="Ki4-aa-9OB"/>
                             <constraint firstItem="wyT-tB-gAL" firstAttribute="leading" secondItem="zOh-Bd-2J2" secondAttribute="trailing" priority="750" constant="20" id="Lbf-JH-qdn"/>
                             <constraint firstItem="wyT-tB-gAL" firstAttribute="height" secondItem="zOh-Bd-2J2" secondAttribute="height" id="Rrc-Yh-Nk6"/>
+                            <constraint firstItem="O3f-Iv-P5S" firstAttribute="centerX" secondItem="Fge-NA-RFk" secondAttribute="centerX" id="YjV-Ig-jGd"/>
                             <constraint firstAttribute="trailing" secondItem="S3U-2W-2AV" secondAttribute="trailing" id="dq1-sF-wdz"/>
+                            <constraint firstItem="wyT-tB-gAL" firstAttribute="centerX" secondItem="bbl-xa-Pvj" secondAttribute="centerX" id="fZk-5q-yrh"/>
                             <constraint firstItem="wyT-tB-gAL" firstAttribute="top" secondItem="zOh-Bd-2J2" secondAttribute="top" id="fdL-MO-nf2"/>
                             <constraint firstAttribute="width" secondItem="zOh-Bd-2J2" secondAttribute="width" multiplier="320/80" id="gNE-dk-jRX"/>
-                            <constraint firstItem="S3U-2W-2AV" firstAttribute="top" secondItem="zOh-Bd-2J2" secondAttribute="bottom" constant="30" id="jNl-rz-yXx"/>
+                            <constraint firstItem="bbl-xa-Pvj" firstAttribute="top" secondItem="AWj-bu-TqV" secondAttribute="top" id="i22-IP-uk2"/>
+                            <constraint firstItem="S3U-2W-2AV" firstAttribute="top" secondItem="zOh-Bd-2J2" secondAttribute="bottom" constant="40" id="jNl-rz-yXx"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="centerX" secondItem="AWj-bu-TqV" secondAttribute="centerX" id="jbj-SL-EJC"/>
+                            <constraint firstItem="AWj-bu-TqV" firstAttribute="top" secondItem="zOh-Bd-2J2" secondAttribute="bottom" constant="5" id="kqh-gR-fYp"/>
                             <constraint firstItem="wyT-tB-gAL" firstAttribute="height" secondItem="O3f-Iv-P5S" secondAttribute="height" id="ltd-Iv-XaW"/>
                             <constraint firstItem="S3U-2W-2AV" firstAttribute="leading" secondItem="yqW-rc-6GO" secondAttribute="leading" id="nT8-0s-WDQ"/>
                             <constraint firstItem="zOh-Bd-2J2" firstAttribute="leading" secondItem="O3f-Iv-P5S" secondAttribute="trailing" priority="750" constant="20" id="qXI-s4-iC1"/>
-                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="a58-TO-BSM" secondAttribute="bottom" constant="30" id="qjg-Mw-spm"/>
+                            <constraint firstItem="zOh-Bd-2J2" firstAttribute="top" secondItem="a58-TO-BSM" secondAttribute="bottom" constant="20" id="qjg-Mw-spm"/>
+                            <constraint firstItem="bbl-xa-Pvj" firstAttribute="top" secondItem="Fge-NA-RFk" secondAttribute="top" id="t5I-gh-0zH"/>
                             <constraint firstItem="wyT-tB-gAL" firstAttribute="top" secondItem="O3f-Iv-P5S" secondAttribute="top" id="wrq-nL-lRs"/>
                             <constraint firstItem="EiG-6g-LQu" firstAttribute="top" secondItem="S3U-2W-2AV" secondAttribute="bottom" id="zXj-jD-wel"/>
                         </constraints>
@@ -205,6 +235,9 @@
                         <outlet property="btnGreen" destination="zOh-Bd-2J2" id="uh8-Pi-e8t"/>
                         <outlet property="btnRed" destination="O3f-Iv-P5S" id="Tma-KB-nPO"/>
                         <outlet property="btnYellow" destination="wyT-tB-gAL" id="dsx-OJ-j2X"/>
+                        <outlet property="swGreen" destination="AWj-bu-TqV" id="c2w-xF-zz7"/>
+                        <outlet property="swRed" destination="Fge-NA-RFk" id="EMJ-lJ-6us"/>
+                        <outlet property="swYellow" destination="bbl-xa-Pvj" id="izw-kF-Baf"/>
                         <segue destination="FSb-FA-lVs" kind="unwind" unwindAction="disconnectActionForSegue:" id="vjf-q9-Oth"/>
                     </connections>
                 </viewController>

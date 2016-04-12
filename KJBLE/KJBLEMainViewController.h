@@ -24,4 +24,6 @@
 
 - (IBAction)disconnectActionForSegue:(UIStoryboardSegue *)segue;
 
+- (IBAction)onRefresh:(id)sender;
+
 @end

@@ -24,6 +24,7 @@ extern NSString* const kNotifyBLEDeviceDisconnected;
 
 - (void)testScans;
 - (void)scanStop;
+- (void)refresh;
 - (NSArray *)nearByDevicesList;
 - (void)connectDevice:(KJBLEDevice *)device;
 - (void)disconnectDevice:(KJBLEDevice *)device;

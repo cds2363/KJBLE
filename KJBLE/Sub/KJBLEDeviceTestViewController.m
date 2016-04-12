@@ -7,7 +7,6 @@
 //
 
 #import "KJBLEDeviceTestViewController.h"
-#import "DefinitionIF.h"
 
 @interface KJBLEDeviceTestViewController ()
 
@@ -26,13 +25,20 @@
 		[_device.peripheral discoverServices:nil];
 	}
 	
-	
+	[self resetCurrent];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCharacteristic:) name:kNotifyBLEPeripheralUpdateValueForCharacteristic object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+	[super viewDidDisappear:animated];
+	
+	[self resetCurrent];
+	[self sendData:[self makeSendingData]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +69,54 @@
 	}
 }
 
+- (IBAction)onSwitchChanged:(UISwitch *)sender {
+	
+	ColorType selectedType;
+	
+	if(sender == swRed)			selectedType = TypeRed;
+	else if(sender == swGreen)	selectedType = TypeGreen;
+	else						selectedType = TypeYello;
+	
+	if(currType & selectedType) {
+		if(!sender.on) {
+			currType &= ~selectedType;
+		}
+	}
+	else {
+		if(sender.on) {
+			currType |= selectedType;
+		}
+	}
+	
+	NSLog(@"currType : [%c]", currType);
+	
+	[self sendData:[self makeSendingData]];
+}
+
 #pragma mark - Private Methods
+- (void)resetCurrent {
+	currType = TypeNone;
+	swRed.on =
+	swGreen.on =
+	swYellow.on = NO;
+}
+
+- (NSData *)makeSendingData {
+	uint8_t target = currType;
+	NSData *result = [NSData dataWithBytes:&target length:sizeof(uint8_t)];
+	NSLog(@"%@", result);
+	
+	return result;
+}
+
+- (void)sendData:(NSData *)param {
+	[[_device.peripheral services] enumerateObjectsUsingBlock:^(CBService *service, NSUInteger idx, BOOL *stop) {
+		[[service characteristics] enumerateObjectsUsingBlock:^(CBCharacteristic *chara, NSUInteger subIdx, BOOL *subStop) {
+			[_device.peripheral writeValue:param forCharacteristic:chara type:CBCharacteristicWriteWithoutResponse];
+		}];
+	}];
+}
+
 - (void)sendValue:(NSString *) str {
 	for (CBService * service in [_device.peripheral services]) {
 		for (CBCharacteristic * characteristic in [service characteristics])

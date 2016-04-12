@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KJBLEDevice.h"
+#import "DefinitionIF.h"
 
 @interface KJBLEDeviceTestViewController : UIViewController {
 	IBOutlet UIButton *btnRed;
@@ -19,10 +20,13 @@
 	IBOutlet UISwitch *swYellow;
 	
 	IBOutlet UIView *baldView;
+	
+	ColorType currType;
 }
 
 @property (nonatomic, strong) KJBLEDevice *device;
 
 - (IBAction)onButtonClicked:(UIButton *)sender;
+- (IBAction)onSwitchChanged:(UISwitch *)sender;
 
 @end
