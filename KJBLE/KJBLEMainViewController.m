@@ -214,8 +214,13 @@
 
 - (IBAction)onRefresh:(id)sender {
 //	[ProgressHUD show:@"Find Nearby BLE Devices..."];
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-	[_manager refresh];
+	if(_selectedDevice) {
+		[_manager disconnectDevice:_selectedDevice];
+	}
+	else {
+		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+		[_manager refresh];
+	}
 }
 
 /**/
@@ -238,7 +243,8 @@
 
 #pragma mark - Notify
 - (void)managerReady:(NSNotification *)notify {
-	[_manager testScans];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	[_manager scanStart];
 }
 
 - (void)foundDevice:(NSNotification *)notify {

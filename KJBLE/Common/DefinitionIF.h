@@ -13,7 +13,9 @@ typedef NS_OPTIONS(NSInteger, ColorType) {
 	TypeNone	= 0,
 	TypeRed		= 1 << 0,
 	TypeGreen	= 1 << 1,
-	TypeYello	= 1 << 2,
+	TypeOrange	= 1 << 2,
+	
+	TypeBlink	= 1 << 3,
 };
 
 #endif

@@ -22,7 +22,7 @@ extern NSString* const kNotifyBLEDeviceDisconnected;
 
 + (instancetype)defaultManager;
 
-- (void)testScans;
+- (void)scanStart;
 - (void)scanStop;
 - (void)refresh;
 - (NSArray *)nearByDevicesList;

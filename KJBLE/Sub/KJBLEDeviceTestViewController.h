@@ -13,11 +13,12 @@
 @interface KJBLEDeviceTestViewController : UIViewController {
 	IBOutlet UIButton *btnRed;
 	IBOutlet UIButton *btnGreen;
-	IBOutlet UIButton *btnYellow;
+	IBOutlet UIButton *btnOrange;
 	
+	IBOutlet UISwitch *swBlink;
 	IBOutlet UISwitch *swRed;
 	IBOutlet UISwitch *swGreen;
-	IBOutlet UISwitch *swYellow;
+	IBOutlet UISwitch *swOrange;
 	
 	IBOutlet UIView *baldView;
 	

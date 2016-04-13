@@ -39,6 +39,8 @@
 	
 	[self resetCurrent];
 	[self sendData:[self makeSendingData]];
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:kNotifyBLEPeripheralUpdateValueForCharacteristic object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,8 +66,8 @@
 	else if(sender == btnGreen) {
 		[self sendValue:@"Green"];
 	}
-	else if(sender == btnYellow) {
-		[self sendValue:@"Yellow"];
+	else if(sender == btnOrange) {
+		[self sendValue:@"Orange"];
 	}
 }
 
@@ -73,9 +75,10 @@
 	
 	ColorType selectedType;
 	
-	if(sender == swRed)			selectedType = TypeRed;
+	if(sender == swBlink)		selectedType = TypeBlink;
+	else if(sender == swRed)	selectedType = TypeRed;
 	else if(sender == swGreen)	selectedType = TypeGreen;
-	else						selectedType = TypeYello;
+	else						selectedType = TypeOrange;
 	
 	if(currType & selectedType) {
 		if(!sender.on) {
@@ -88,8 +91,6 @@
 		}
 	}
 	
-	NSLog(@"currType : [%c]", currType);
-	
 	[self sendData:[self makeSendingData]];
 }
 
@@ -98,7 +99,7 @@
 	currType = TypeNone;
 	swRed.on =
 	swGreen.on =
-	swYellow.on = NO;
+	swOrange.on = NO;
 }
 
 - (NSData *)makeSendingData {

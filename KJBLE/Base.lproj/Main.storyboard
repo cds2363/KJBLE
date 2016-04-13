@@ -149,21 +149,19 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-Bd-2J2">
                                 <rect key="frame" x="225" y="84" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JVA-Cx-GIR"/>
                                 </constraints>
-                                <state key="normal" title="Green"/>
+                                <state key="normal" title="Orange"/>
                                 <connections>
                                     <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="PDC-df-9Pn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-tB-gAL">
                                 <rect key="frame" x="395" y="84" width="150" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Yellow">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.83921568627450982" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Green"/>
                                 <connections>
                                     <action selector="onButtonClicked:" destination="P8a-Es-C5S" eventType="touchUpInside" id="Qca-yQ-z48"/>
                                 </connections>
@@ -174,13 +172,13 @@
                                     <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="78Q-g1-8n7"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWj-bu-TqV" userLabel="Switch - Green">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWj-bu-TqV" userLabel="Switch - Orange">
                                 <rect key="frame" x="276" y="119" width="51" height="31"/>
                                 <connections>
                                     <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="DOp-qd-dcY"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-xa-Pvj" userLabel="Switch - Yellow">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-xa-Pvj" userLabel="Switch - Green">
                                 <rect key="frame" x="446" y="119" width="51" height="31"/>
                                 <connections>
                                     <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="8Li-Pl-IWY"/>
@@ -229,15 +227,26 @@
                             <constraint firstItem="EiG-6g-LQu" firstAttribute="top" secondItem="S3U-2W-2AV" secondAttribute="bottom" id="zXj-jD-wel"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="デバイス名" id="xPY-df-JGF"/>
+                    <navigationItem key="navigationItem" title="デバイス名" id="xPY-df-JGF">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="GZ6-fH-7Si">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="ZHS-1t-dYd">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSwitchChanged:" destination="P8a-Es-C5S" eventType="valueChanged" id="inB-tS-tIy"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="baldView" destination="S3U-2W-2AV" id="J6c-EH-jXf"/>
-                        <outlet property="btnGreen" destination="zOh-Bd-2J2" id="uh8-Pi-e8t"/>
+                        <outlet property="btnGreen" destination="wyT-tB-gAL" id="bje-XK-i5K"/>
+                        <outlet property="btnOrange" destination="zOh-Bd-2J2" id="FR5-nt-Ewn"/>
                         <outlet property="btnRed" destination="O3f-Iv-P5S" id="Tma-KB-nPO"/>
-                        <outlet property="btnYellow" destination="wyT-tB-gAL" id="dsx-OJ-j2X"/>
-                        <outlet property="swGreen" destination="AWj-bu-TqV" id="c2w-xF-zz7"/>
+                        <outlet property="swBlink" destination="ZHS-1t-dYd" id="hnj-Fz-pZO"/>
+                        <outlet property="swGreen" destination="bbl-xa-Pvj" id="KEC-Od-gCx"/>
+                        <outlet property="swOrange" destination="AWj-bu-TqV" id="87h-jk-e7s"/>
                         <outlet property="swRed" destination="Fge-NA-RFk" id="EMJ-lJ-6us"/>
-                        <outlet property="swYellow" destination="bbl-xa-Pvj" id="izw-kF-Baf"/>
                         <segue destination="FSb-FA-lVs" kind="unwind" unwindAction="disconnectActionForSegue:" id="vjf-q9-Oth"/>
                     </connections>
                 </viewController>

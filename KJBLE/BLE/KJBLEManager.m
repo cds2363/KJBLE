@@ -49,7 +49,7 @@ NSString* const kNotifyBLEDeviceDisconnected = @"BLE_DEVICE_DISCONNECTED";
 	return self;
 }
 
-- (void)testScans {
+- (void)scanStart {
 	if([_centralManage state] == CBCentralManagerStatePoweredOn) {
 		[_centralManage scanForPeripheralsWithServices:nil options:nil];
 	}
