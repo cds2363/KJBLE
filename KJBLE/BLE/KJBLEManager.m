@@ -127,6 +127,7 @@ NSString* const kNotifyBLEDeviceDisconnected = @"BLE_DEVICE_DISCONNECTED";
 // BT端末で周りのBTモジュールが発見された場合に呼ばれるコールバックメソッド。
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
 	NSLog(@"%s", __FUNCTION__);
+	NSLog(@"%@", peripheral);
 	NSLog(@"%@", advertisementData);
 	NSLog(@"RSSI - [%@]", RSSI);
 	
