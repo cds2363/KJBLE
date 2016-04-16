@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4268F3BE1CAA77160018844D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3BD1CAA77160018844D /* main.m */; };
+		4268F3C11CAA77160018844D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3C01CAA77160018844D /* AppDelegate.m */; };
+		4268F3C71CAA77160018844D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4268F3C51CAA77160018844D /* Main.storyboard */; };
+		4268F3C91CAA77160018844D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4268F3C81CAA77160018844D /* Images.xcassets */; };
+		4268F3CC1CAA77160018844D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4268F3CA1CAA77160018844D /* LaunchScreen.xib */; };
+		4268F3D81CAA77160018844D /* KJBLETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3D71CAA77160018844D /* KJBLETests.m */; };
+		4268F3E41CAA777D0018844D /* KJBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3E31CAA777D0018844D /* KJBLEManager.m */; };
+		4268F3E71CAA79CF0018844D /* KJBLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3E61CAA79CF0018844D /* KJBLEDevice.m */; };
+		427D2ED01CAD3B81007848DF /* KJBLEMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */; };
+		42AD93431CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */; };
+		8C371DAB1CBAAFE400E3A0CF /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C371DA81CBAAFE400E3A0CF /* ProgressHUD.bundle */; };
+		8C371DAC1CBAAFE400E3A0CF /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C371DAA1CBAAFE400E3A0CF /* ProgressHUD.m */; };
+		8C371DAE1CBAB05800E3A0CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C371DAD1CBAB05800E3A0CF /* CoreGraphics.framework */; };
+		8C371DB11CBAB0AF00E3A0CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C371DB01CBAB0AF00E3A0CF /* UIKit.framework */; };
+		8C371DB31CBAB0C100E3A0CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C371DB21CBAB0C100E3A0CF /* Foundation.framework */; };
+		8C371DB81CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C371DB71CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4268F3D21CAA77160018844D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4268F3B01CAA77160018844D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4268F3B71CAA77160018844D;
+			remoteInfo = KJBLE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		424150A01CBBA2B800463E48 /* DefinitionIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefinitionIF.h; sourceTree = "<group>"; };
+		4268F3B81CAA77160018844D /* KJBLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJBLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4268F3BC1CAA77160018844D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4268F3BD1CAA77160018844D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4268F3BF1CAA77160018844D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4268F3C01CAA77160018844D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4268F3C61CAA77160018844D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4268F3C81CAA77160018844D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4268F3CB1CAA77160018844D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4268F3D11CAA77160018844D /* KJBLETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJBLETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4268F3D61CAA77160018844D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4268F3D71CAA77160018844D /* KJBLETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJBLETests.m; sourceTree = "<group>"; };
+		4268F3E21CAA777D0018844D /* KJBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KJBLEManager.h; path = BLE/KJBLEManager.h; sourceTree = "<group>"; };
+		4268F3E31CAA777D0018844D /* KJBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KJBLEManager.m; path = BLE/KJBLEManager.m; sourceTree = "<group>"; };
+		4268F3E51CAA79CF0018844D /* KJBLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KJBLEDevice.h; path = BLE/KJBLEDevice.h; sourceTree = "<group>"; };
+		4268F3E61CAA79CF0018844D /* KJBLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KJBLEDevice.m; path = BLE/KJBLEDevice.m; sourceTree = "<group>"; };
+		427D2ECE1CAD3B81007848DF /* KJBLEMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJBLEMainViewController.h; sourceTree = "<group>"; };
+		427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJBLEMainViewController.m; sourceTree = "<group>"; };
+		42AD93411CB51C6D0086A668 /* KJBLEDeviceInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJBLEDeviceInfoViewController.h; sourceTree = "<group>"; };
+		42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJBLEDeviceInfoViewController.m; sourceTree = "<group>"; };
+		8C371DA81CBAAFE400E3A0CF /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		8C371DA91CBAAFE400E3A0CF /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		8C371DAA1CBAAFE400E3A0CF /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		8C371DAD1CBAB05800E3A0CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8C371DB01CBAB0AF00E3A0CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8C371DB21CBAB0C100E3A0CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C371DB41CBAB15A00E3A0CF /* KJBLE-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KJBLE-Prefix.pch"; sourceTree = "<group>"; };
+		8C371DB61CBAB86000E3A0CF /* KJBLEDeviceTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJBLEDeviceTestViewController.h; sourceTree = "<group>"; };
+		8C371DB71CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJBLEDeviceTestViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4268F3B51CAA77160018844D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C371DB31CBAB0C100E3A0CF /* Foundation.framework in Frameworks */,
+				8C371DB11CBAB0AF00E3A0CF /* UIKit.framework in Frameworks */,
+				8C371DAE1CBAB05800E3A0CF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4268F3CE1CAA77160018844D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		424150A11CBBA2CF00463E48 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				424150A01CBBA2B800463E48 /* DefinitionIF.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4268F3AF1CAA77160018844D = {
+			isa = PBXGroup;
+			children = (
+				4268F3BA1CAA77160018844D /* KJBLE */,
+				4268F3D41CAA77160018844D /* KJBLETests */,
+				8C371DAF1CBAB06C00E3A0CF /* Frameworks */,
+				4268F3B91CAA77160018844D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4268F3B91CAA77160018844D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4268F3B81CAA77160018844D /* KJBLE.app */,
+				4268F3D11CAA77160018844D /* KJBLETests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4268F3BA1CAA77160018844D /* KJBLE */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DA71CBAAFD500E3A0CF /* ProgressHUD */,
+				4268F3BF1CAA77160018844D /* AppDelegate.h */,
+				4268F3C01CAA77160018844D /* AppDelegate.m */,
+				427D2ECE1CAD3B81007848DF /* KJBLEMainViewController.h */,
+				427D2ECF1CAD3B81007848DF /* KJBLEMainViewController.m */,
+				42AD93411CB51C6D0086A668 /* KJBLEDeviceInfoViewController.h */,
+				42AD93421CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m */,
+				424150A11CBBA2CF00463E48 /* Common */,
+				8C371DB51CBAB80400E3A0CF /* Sub */,
+				4268F3E11CAA77360018844D /* BLE */,
+				4268F3C51CAA77160018844D /* Main.storyboard */,
+				4268F3C81CAA77160018844D /* Images.xcassets */,
+				4268F3CA1CAA77160018844D /* LaunchScreen.xib */,
+				4268F3BB1CAA77160018844D /* Supporting Files */,
+			);
+			path = KJBLE;
+			sourceTree = "<group>";
+		};
+		4268F3BB1CAA77160018844D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4268F3BC1CAA77160018844D /* Info.plist */,
+				4268F3BD1CAA77160018844D /* main.m */,
+				8C371DB41CBAB15A00E3A0CF /* KJBLE-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4268F3D41CAA77160018844D /* KJBLETests */ = {
+			isa = PBXGroup;
+			children = (
+				4268F3D71CAA77160018844D /* KJBLETests.m */,
+				4268F3D51CAA77160018844D /* Supporting Files */,
+			);
+			path = KJBLETests;
+			sourceTree = "<group>";
+		};
+		4268F3D51CAA77160018844D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4268F3D61CAA77160018844D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4268F3E11CAA77360018844D /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				4268F3E21CAA777D0018844D /* KJBLEManager.h */,
+				4268F3E31CAA777D0018844D /* KJBLEManager.m */,
+				4268F3E51CAA79CF0018844D /* KJBLEDevice.h */,
+				4268F3E61CAA79CF0018844D /* KJBLEDevice.m */,
+			);
+			name = BLE;
+			sourceTree = "<group>";
+		};
+		8C371DA71CBAAFD500E3A0CF /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DA81CBAAFE400E3A0CF /* ProgressHUD.bundle */,
+				8C371DA91CBAAFE400E3A0CF /* ProgressHUD.h */,
+				8C371DAA1CBAAFE400E3A0CF /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		8C371DAF1CBAB06C00E3A0CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DB21CBAB0C100E3A0CF /* Foundation.framework */,
+				8C371DB01CBAB0AF00E3A0CF /* UIKit.framework */,
+				8C371DAD1CBAB05800E3A0CF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C371DB51CBAB80400E3A0CF /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				8C371DB61CBAB86000E3A0CF /* KJBLEDeviceTestViewController.h */,
+				8C371DB71CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m */,
+			);
+			path = Sub;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4268F3B71CAA77160018844D /* KJBLE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4268F3DB1CAA77160018844D /* Build configuration list for PBXNativeTarget "KJBLE" */;
+			buildPhases = (
+				4268F3B41CAA77160018844D /* Sources */,
+				4268F3B51CAA77160018844D /* Frameworks */,
+				4268F3B61CAA77160018844D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KJBLE;
+			productName = KJBLE;
+			productReference = 4268F3B81CAA77160018844D /* KJBLE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4268F3D01CAA77160018844D /* KJBLETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4268F3DE1CAA77160018844D /* Build configuration list for PBXNativeTarget "KJBLETests" */;
+			buildPhases = (
+				4268F3CD1CAA77160018844D /* Sources */,
+				4268F3CE1CAA77160018844D /* Frameworks */,
+				4268F3CF1CAA77160018844D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4268F3D31CAA77160018844D /* PBXTargetDependency */,
+			);
+			name = KJBLETests;
+			productName = KJBLETests;
+			productReference = 4268F3D11CAA77160018844D /* KJBLETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4268F3B01CAA77160018844D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = chadongsu;
+				TargetAttributes = {
+					4268F3B71CAA77160018844D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					4268F3D01CAA77160018844D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 4268F3B71CAA77160018844D;
+					};
+				};
+			};
+			buildConfigurationList = 4268F3B31CAA77160018844D /* Build configuration list for PBXProject "KJBLE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4268F3AF1CAA77160018844D;
+			productRefGroup = 4268F3B91CAA77160018844D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4268F3B71CAA77160018844D /* KJBLE */,
+				4268F3D01CAA77160018844D /* KJBLETests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4268F3B61CAA77160018844D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C371DAB1CBAAFE400E3A0CF /* ProgressHUD.bundle in Resources */,
+				4268F3C71CAA77160018844D /* Main.storyboard in Resources */,
+				4268F3CC1CAA77160018844D /* LaunchScreen.xib in Resources */,
+				4268F3C91CAA77160018844D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4268F3CF1CAA77160018844D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4268F3B41CAA77160018844D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				427D2ED01CAD3B81007848DF /* KJBLEMainViewController.m in Sources */,
+				8C371DB81CBAB86000E3A0CF /* KJBLEDeviceTestViewController.m in Sources */,
+				4268F3E41CAA777D0018844D /* KJBLEManager.m in Sources */,
+				4268F3C11CAA77160018844D /* AppDelegate.m in Sources */,
+				8C371DAC1CBAAFE400E3A0CF /* ProgressHUD.m in Sources */,
+				4268F3E71CAA79CF0018844D /* KJBLEDevice.m in Sources */,
+				4268F3BE1CAA77160018844D /* main.m in Sources */,
+				42AD93431CB51C6D0086A668 /* KJBLEDeviceInfoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4268F3CD1CAA77160018844D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4268F3D81CAA77160018844D /* KJBLETests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4268F3D31CAA77160018844D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4268F3B71CAA77160018844D /* KJBLE */;
+			targetProxy = 4268F3D21CAA77160018844D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4268F3C51CAA77160018844D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4268F3C61CAA77160018844D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4268F3CA1CAA77160018844D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4268F3CB1CAA77160018844D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4268F3D91CAA77160018844D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4268F3DA1CAA77160018844D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4268F3DC1CAA77160018844D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "KJBLE/KJBLE-Prefix.pch";
+				INFOPLIST_FILE = KJBLE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4268F3DD1CAA77160018844D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "KJBLE/KJBLE-Prefix.pch";
+				INFOPLIST_FILE = KJBLE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4268F3DF1CAA77160018844D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KJBLETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KJBLE.app/KJBLE";
+			};
+			name = Debug;
+		};
+		4268F3E01CAA77160018844D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KJBLETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KJBLE.app/KJBLE";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4268F3B31CAA77160018844D /* Build configuration list for PBXProject "KJBLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4268F3D91CAA77160018844D /* Debug */,
+				4268F3DA1CAA77160018844D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4268F3DB1CAA77160018844D /* Build configuration list for PBXNativeTarget "KJBLE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4268F3DC1CAA77160018844D /* Debug */,
+				4268F3DD1CAA77160018844D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4268F3DE1CAA77160018844D /* Build configuration list for PBXNativeTarget "KJBLETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4268F3DF1CAA77160018844D /* Debug */,
+				4268F3E01CAA77160018844D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4268F3B01CAA77160018844D /* Project object */;
+}
