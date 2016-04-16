@@ -131,7 +131,8 @@ NSString* const kNotifyBLEReady = @"BLE_READY";
 	else {
 		[service.characteristics enumerateObjectsUsingBlock:^(CBCharacteristic *character, NSUInteger idx, BOOL *stop) {
 			NSLog(@"[%lu] - %@", (unsigned long)idx, character);
-			[peripheral discoverDescriptorsForCharacteristic:character];
+//			[peripheral discoverDescriptorsForCharacteristic:character];
+			[_peripheral setNotifyValue:YES forCharacteristic:character];
 		}];
 	}
 }
